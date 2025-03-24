@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Tree Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body>
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        <a-marker preset="hiro">
+            <a-entity 
+                gltf-model="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Tree/glTF/Tree.gltf"
+                scale="0.5 0.5 0.5"
+                position="0 0 0"
+                rotation="0 0 0">
+            </a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <div class="controls">
+        <button id="rotate-left">↻ Rotate Left</button>
+        <button id="rotate-right">↺ Rotate Right</button>
+        <button id="scale-up">+ Scale Up</button>
+        <button id="scale-down">- Scale Down</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
